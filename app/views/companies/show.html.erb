@@ -1,0 +1,15 @@
+<h1><%= @company.name %>
+<h2><%= @company.city %>, <%= @company.state %>
+<br>
+<h3>Contacts</h3>
+<ul>
+<% for contact in @company.contacts%>
+    <li>
+        <%= contact.last_name %>, <%= contact.first_name%>
+    </li>
+<% end %>
+</ul>
+
+<a href = "/contacts/new?company_id=<%= @company.id %>"> Add Contact for this Company</a>
+<br><br>
+<a href = "/companies">Back to All Companies</a>
